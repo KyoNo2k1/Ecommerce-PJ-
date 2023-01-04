@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:PanCake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="EcPJ.HomePage">
+    <ContentPage.Content>
+        <Grid>
+
+            <CollectionView x:Name="LstProduct"
+                            SelectionMode="Single"
+                            Header="Hello"
+                            SelectionChanged="LstProduct_SelectionChanged">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"
+                                     Span="1" />
+                </CollectionView.ItemsLayout>
+                
+                <CollectionView.HeaderTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Label Margin="15,150,15,0"
+                               Text="Product Categories"
+                               TextColor="#09052e"
+                               FontSize="Large"
+                               HorizontalTextAlignment="Center"/>
+                            <Label Margin="15,0,15,0"
+                               Text="Scroll horizontally to see more categories."
+                               TextColor="#09052e"
+                               FontSize="Caption"
+                               HorizontalTextAlignment="Center"/>
+                            <CollectionView
+                                         x:Name="cateList"
+                                         HeightRequest="130"
+                                         SelectionMode="Single"
+                                         SelectionChanged="CollectionView_SelectionChanged">
+                                <CollectionView.ItemsLayout>
+                                    <LinearItemsLayout Orientation="Horizontal" />
+                                </CollectionView.ItemsLayout>
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackLayout Orientation="Horizontal">
+                                            
+                                            
+                                            <Frame Padding="0"
+                                               BackgroundColor="Transparent"
+                                               Margin="10,0,10,0"
+                                               HasShadow="True">
+                                                <StackLayout Orientation="Vertical">
+                                                    <Frame Padding="0"
+                                                       CornerRadius="30"
+                                                       IsClippedToBounds="True"
+                                                       BackgroundColor="red"
+                                                       HeightRequest="40"
+                                                       WidthRequest="160"
+                                                       Margin="5,10,1,10"
+                                                       HorizontalOptions="FillAndExpand">
+
+                                                        <Label TextColor="white"
+                                                       HorizontalTextAlignment="Center"
+                                                             VerticalTextAlignment="Center"
+                                                       HorizontalOptions="FillAndExpand"
+                                                       
+                                                       FontSize="Medium"
+                                                       TextDecorations="None"
+                                                       Text="á"/>
+                                                    </Frame>
+
+
+                                                </StackLayout>
+                                            </Frame>
+                                        </StackLayout>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                            <Label Margin="15,-65,15,0"
+                               Text="Popular Products"
+                               TextColor="#09052e"
+                               FontSize="Large"
+                               HorizontalTextAlignment="Center"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.HeaderTemplate >
+
+                <CollectionView.ItemTemplate  ItemsLayout="VerticalList">
+                    <DataTemplate>
+                        <StackLayout  HorizontalOptions="Center" 
+                                     Padding="20,10,20,10">
+                            <PanCake:PancakeView Grid.Row="1" CornerRadius="10,0,90,90">
+                                <Grid>
+                                    <Frame
+                            HorizontalOptions="FillAndExpand" 
+                            BackgroundColor="#f7f9f9"
+                            Padding="0"
+                            CornerRadius="10"
+                            HasShadow="True">
+                                        <StackLayout 
+                                      Padding="0"
+                                      VerticalOptions="FillAndExpand"
+                                      HorizontalOptions="FillAndExpand" 
+                                  
+                                     
+                                         >
+
+                                            <Frame Padding="0"
+                                    CornerRadius="10"
+                                   HeightRequest="200"
+                                   HorizontalOptions="FillAndExpand" 
+                                    >
+                                                <Image Aspect="Fill"
+                                               
+                                       Source="{Binding img}"/>
+                                            </Frame>
+                                            <StackLayout Orientation="Horizontal">
+                                                <StackLayout HorizontalOptions="CenterAndExpand">
+                                                    <Label TextColor="#ff5e14"
+                                           FontSize="Body"
+                                       HorizontalTextAlignment="Center"
+                                       Text="{Binding title}"/>
+                                                    <Label TextColor="#09052e"
+                                           FontSize="Large"
+                                       HorizontalTextAlignment="Center"
+                                       Text="{Binding price ,StringFormat='Price {0}$'}"/>
+                                                    <Button Margin="10"
+                                            Text="Add To Cart" ClassId="{Binding _id}"
+                                            HorizontalOptions="Fill"
+                                            CornerRadius="30"
+                                            BackgroundColor="#ff5e14"
+                                            TextColor="White" Clicked="Button_Clicked"/>
+
+                                                </StackLayout>
+
+                                            </StackLayout>
+
+                                        </StackLayout>
+                                    </Frame>
+                                </Grid>
+
+                            </PanCake:PancakeView>
+                        </StackLayout>
+                    </DataTemplate>
+
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+            <ActivityIndicator IsRunning="{Binding IsBusy}" Color="Orange" IsVisible="{Binding IsBusy}"/>
+            <Grid ColumnSpacing="0"
+                  HorizontalOptions="FillAndExpand"
+                  VerticalOptions="Start"
+                  RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="30" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="8*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Image Grid.Row="0"
+                       Grid.Column="0"
+                       Grid.RowSpan="4"
+                       Grid.ColumnSpan="3"
+                       Source="banner.png"
+                       Aspect="Fill" />
+                <StackLayout Orientation="Horizontal"
+                             Grid.Row="1"
+                             Grid.Column="0"
+                             Grid.ColumnSpan="3">
+                    <Image HorizontalOptions="Start"
+                           Margin="20,20,0,0"
+                           Source="hamburger.png"
+                           HeightRequest="30"
+                           WidthRequest="50">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="ImgMenu" Tapped="ImgMenu_Tapped" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Grid HorizontalOptions="EndAndExpand"
+                          Margin="0,0,20,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*" />
+                            <ColumnDefinition Width="6*" />
+                        </Grid.ColumnDefinitions>
+                        <Image VerticalOptions="Center"
+                               HorizontalOptions="Center"
+                               Source="Shopbag.png"
+                               Grid.Row="1"
+                               Grid.Column="0"
+                               Grid.RowSpan="2"
+                               Grid.ColumnSpan="2" />
+                        <Frame Padding="1"
+                               CornerRadius="55"
+                               VerticalOptions="End"
+                               HorizontalOptions="Start"
+                               Grid.Row="0"
+                               Grid.Column="1"
+                               Grid.RowSpan="2"
+                               BackgroundColor="#ff5e14">
+                            <Label Text="{Binding TotalItems}"
+                                   VerticalTextAlignment="Center"
+                                   HorizontalTextAlignment="Center"
+                                   HeightRequest="25"
+                                   WidthRequest="25"
+                                   TextColor="White" />
+                        </Frame>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="TapCartIcon" Tapped="TapCartIcon_Tapped" />
+                        </Grid.GestureRecognizers>
+                    </Grid>
+                </StackLayout>
+                <Image Margin="0,15,0,0"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand"
+                       Source="logo.jfif"
+                       
+                       Aspect="AspectFill"
+                       Grid.Row="0"
+                       Grid.Column="1"
+                       Grid.RowSpan="3" />
+            </Grid>
+            <Grid x:Name="GridOverlay"
+                  IsVisible="False"
+                  ColumnSpacing="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.6*" />
+                    <ColumnDefinition Width="0.4*" />
+                </Grid.ColumnDefinitions>
+                <StackLayout BackgroundColor="White"
+                             x:Name="SlMenu">
+                    <Grid BackgroundColor="#ff5e14"
+                          HeightRequest="120">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*" />
+                            <ColumnDefinition Width="6*" />
+                        </Grid.ColumnDefinitions>
+                        <Image Source="logo.jfif"
+                               
+                               Margin="5"
+                               VerticalOptions="Center" />
+                        <StackLayout Grid.Column="1"
+                                     VerticalOptions="Center"
+                                     Spacing="0"
+                                     Margin="15,0,15,0">
+                            <Label Text="Welcome"
+                                   FontSize="Large"
+                                   TextColor="White" />
+                            <Label Text="{Binding UserName}"
+                                   FontSize="Small"
+                                   TextColor="White" />
+                        </StackLayout>
+                    </Grid>
+                    <StackLayout Spacing="30"
+                                 Orientation="Horizontal"
+                                 Margin="20,0,0,0">
+                        <Image Source="order.png"
+                               HeightRequest="30"
+                               WidthRequest="30" />
+                        <Label Text="My Orders"
+                               TextColor="#ff5e14"
+                               HeightRequest="50"
+                               VerticalTextAlignment="Center"
+                               FontSize="20" />
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="TapOrders" Tapped="TapOrders_Tapped" />
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                    <StackLayout Spacing="30"
+                                 Orientation="Horizontal"
+                                 Margin="20,0,0,0">
+                        <Image Source="shopping_cart.png"
+                               HeightRequest="30"
+                               WidthRequest="30" />
+                        <Label Text="Cart"
+                               TextColor="red"
+                               HeightRequest="50"
+                               VerticalTextAlignment="Center"
+                               FontSize="20" />
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="TapCart" Tapped="TapCart_Tapped"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                    <StackLayout Spacing="30"
+                                 Orientation="Horizontal"
+                                 Margin="20,0,0,0">
+                        <Image Source="contact.png"
+                               HeightRequest="30"
+                               WidthRequest="30" />
+                        <Label Text="Contact"
+                               TextColor="#ff5e14"
+                               HeightRequest="50"
+                               VerticalTextAlignment="Center"
+                               FontSize="20" />
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="TapContact" Tapped="TapContact_Tapped"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                    <StackLayout Spacing="30"
+                                 Orientation="Horizontal"
+                                 Margin="20,0,0,0">
+                        <Image Source="logout.png"
+                               HeightRequest="30"
+                               WidthRequest="30" />
+                        <Label Text="Logout"
+                               TextColor="#ff5e14"
+                               HeightRequest="50"
+                               VerticalTextAlignment="Center"
+                               FontSize="20" />
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="TapLogout" Tapped="TapLogout_Tapped"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                </StackLayout>
+                <BoxView Grid.Column="1"
+                         x:Name="BoxViewLayer">
+                    <BoxView.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="TapCloseMenu" Tapped="TapCloseMenu_Tapped" />
+                    </BoxView.GestureRecognizers>
+                </BoxView>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

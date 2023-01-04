@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "k7I7rEiQCPV9xcuMUGF732W9VOCmrBVCia7uBGTjpmVLwLM21Jk3eGEjR+P8qtrjx93rO2w40pJtnx8f2xhXyQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\nghia\\source\\repos\\EcPJ\\EcPJ\\EcPJ.iOS\\EcPJ.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nghia\\.nuget\\packages\\newtonsoft.json\\12.0.1\\newtonsoft.json.12.0.1.nupkg.sha512",
+    "C:\\Users\\nghia\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
+    "C:\\Users\\nghia\\.nuget\\packages\\system.componentmodel\\4.3.0\\system.componentmodel.4.3.0.nupkg.sha512",
+    "C:\\Users\\nghia\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512",
+    "C:\\Users\\nghia\\.nuget\\packages\\xamarin.forms.pancakeview\\2.3.0.759\\xamarin.forms.pancakeview.2.3.0.759.nupkg.sha512"
+  ],
+  "logs": []
+}

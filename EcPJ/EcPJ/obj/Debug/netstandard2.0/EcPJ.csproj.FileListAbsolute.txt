@@ -1,0 +1,17 @@
+C:\Users\nghia\source\repos\EcPJ\EcPJ\EcPJ\bin\Debug\netstandard2.0\EcPJ.deps.json
+C:\Users\nghia\source\repos\EcPJ\EcPJ\EcPJ\bin\Debug\netstandard2.0\EcPJ.dll
+C:\Users\nghia\source\repos\EcPJ\EcPJ\EcPJ\bin\Debug\netstandard2.0\ref\EcPJ.dll
+C:\Users\nghia\source\repos\EcPJ\EcPJ\EcPJ\bin\Debug\netstandard2.0\EcPJ.pdb
+C:\Users\nghia\source\repos\EcPJ\EcPJ\EcPJ\obj\Debug\netstandard2.0\EcPJ.csproj.AssemblyReference.cache
+C:\Users\nghia\source\repos\EcPJ\EcPJ\EcPJ\obj\Debug\netstandard2.0\EcPJ.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nghia\source\repos\EcPJ\EcPJ\EcPJ\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\nghia\source\repos\EcPJ\EcPJ\EcPJ\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\nghia\source\repos\EcPJ\EcPJ\EcPJ\obj\Debug\netstandard2.0\SignUpPage.xaml.g.cs
+C:\Users\nghia\source\repos\EcPJ\EcPJ\EcPJ\obj\Debug\netstandard2.0\EcPJ.AssemblyInfoInputs.cache
+C:\Users\nghia\source\repos\EcPJ\EcPJ\EcPJ\obj\Debug\netstandard2.0\EcPJ.AssemblyInfo.cs
+C:\Users\nghia\source\repos\EcPJ\EcPJ\EcPJ\obj\Debug\netstandard2.0\EcPJ.csproj.CoreCompileInputs.cache
+C:\Users\nghia\source\repos\EcPJ\EcPJ\EcPJ\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\nghia\source\repos\EcPJ\EcPJ\EcPJ\obj\Debug\netstandard2.0\EcPJ.dll
+C:\Users\nghia\source\repos\EcPJ\EcPJ\EcPJ\obj\Debug\netstandard2.0\ref\EcPJ.dll
+C:\Users\nghia\source\repos\EcPJ\EcPJ\EcPJ\obj\Debug\netstandard2.0\EcPJ.pdb
+C:\Users\nghia\source\repos\EcPJ\EcPJ\EcPJ\obj\Debug\netstandard2.0\HomePage.xaml.g.cs
