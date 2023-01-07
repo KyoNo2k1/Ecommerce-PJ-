@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EcPJ.SignUpPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="20" Margin="25">
+                <Frame HasShadow="True" Padding="25" Margin="0,30,0,30" CornerRadius="30" BackgroundColor="#f7f9f9">
+                    <StackLayout>
+                        <Label Text="Create An Account"
+                               FontAttributes="Bold"
+                               FontSize="Title"
+                               HorizontalOptions="Center"
+                               TextColor="#ff5e14"/>
+                        <Frame HasShadow="True"
+                           Padding="5"
+                           Margin="0,10,0,10"
+                           CornerRadius="30">
+                            <Entry Placeholder="Full Name"
+                               PlaceholderColor="#09052e"
+                               HorizontalTextAlignment="Start"
+                               TextColor="#09052e"
+                               x:Name="username"
+                               Keyboard="Text" Text="{Binding RegisterData.DisplayName, Mode=TwoWay}" />
+                        </Frame>
+                        <Frame HasShadow="True"
+                           Padding="5"
+                           Margin="0,10,0,10"
+                           CornerRadius="30">
+                            <Entry Placeholder="Email"
+                               PlaceholderColor="#09052e"
+                               HorizontalTextAlignment="Start"
+                               TextColor="#09052e"
+                               x:Name="email"
+                               Keyboard="Email" Text="{Binding RegisterData.Email, Mode=TwoWay}"/>
+                        </Frame>
+                        <Frame HasShadow="True"
+                               Padding="5"
+                               Margin="0,10,0,10"
+                               CornerRadius="30">
+                            <Entry Placeholder="Password"
+                               PlaceholderColor="#09052e"
+                               HorizontalTextAlignment="Start"
+                               TextColor="#09052e"
+                               IsPassword="True"
+                               x:Name="password"
+                               Keyboard="Default" Text="{Binding RegisterData.Password, Mode=TwoWay}" />
+                        </Frame>
+                        <Frame HasShadow="True"
+                               Padding="5"
+                               Margin="0,10,0,10"
+                               CornerRadius="30">
+                            <Entry Placeholder="Confirm Password"
+                               PlaceholderColor="#09052e"
+                               HorizontalTextAlignment="Start"
+                               TextColor="#09052e"
+                               IsPassword="True"
+                               x:Name="confirmPW"
+                               Keyboard="Default" Text="{Binding TempPassword, Mode=TwoWay}" />
+                        </Frame>
+
+                        <Label Margin="20,0,20,0"
+                               FontSize="Small"
+                               HorizontalTextAlignment="Center"
+                               TextColor="#09052e"
+                               Text="By creating an account you agree to our Terms of Service and Privacy Policy" />
+                    </StackLayout>
+                </Frame>
+                <Button Text="CONTINUE"
+                        TextColor="White"
+                        CornerRadius="30"
+                        BackgroundColor="#ff5e14" Clicked="Button_Clicked"/>
+                <Label Text="Already have an account?"
+                       HorizontalTextAlignment="Center"
+                       TextColor="#09052e" />
+                <Button Text="Login"
+                        BackgroundColor="#ff5e14"
+                        TextColor="White"
+                        CornerRadius="30" Clicked="Button_Clicked_1"/>
+
+            </StackLayout>
+
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

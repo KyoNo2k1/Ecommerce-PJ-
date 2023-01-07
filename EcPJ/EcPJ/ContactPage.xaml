@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EcPJ.ContactPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="8*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Source="backarrow.png"
+                       Grid.Column="0"
+                       HorizontalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="TapBack" Tapped="TapBack_Tapped" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Grid.Column="1"
+                       TextColor="#ff5e14"
+                       Text="About Us"
+                       FontSize="Large"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Center" />
+                </Grid>
+
+
+                <Grid
+                Padding="20"
+                RowSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition 
+                    Height="290"/>
+                        <RowDefinition
+						Height="Auto" />
+                        <RowDefinition
+						Height="170" />
+                        <RowDefinition
+						Height="50" />
+                        <RowDefinition
+						Height="Auto" />
+                        <RowDefinition
+						Height="50" />
+                    </Grid.RowDefinitions>
+
+
+
+                    <Image
+                    Grid.Row="0"
+					Grid.RowSpan="2"
+					Margin="-20,-20,-20,0"
+					Source="logo.jfif"
+					HeightRequest="367"
+					VerticalOptions="Start"
+					Aspect="AspectFill"
+                    />
+
+
+                    <!-- CARD -->
+                    <Frame
+					CornerRadius="10"
+					Grid.Row="1"
+					Padding="20,16"
+					>
+
+                        <StackLayout
+						Spacing="10">
+
+                            <!-- Date -->
+                            <Label
+							VerticalOptions="Center"
+                            TextColor="#09052e"
+							Text="!Wjpu is the best dream for wjpu!"
+							FontSize="12"
+							Opacity="0.5" />
+
+                            <!-- Title -->
+                            <Label
+							VerticalOptions="Center"
+							Text="WJPUKI"
+							FontSize="30"
+                            TextColor="#09052e"
+							FontFamily="Times Roman"/>
+
+
+                            <Grid>
+                                <!-- Category -->
+                                <Label
+								Text="ABOUT US"
+								TextColor="#ff5e14"
+								FontSize="16"
+								VerticalOptions="Center" />
+
+                            </Grid>
+
+                            <!-- Text block 1 -->
+                            <Grid Margin="0,5,0,10">
+                                <Label
+                                   TextColor="#09052e"
+							Text="Wjpuki is one of the leading Anime shops in the country, specializing in selling and accepting orders for figure models, toys, keychains, toys, costumes and cosplay accessories of all kinds. If you are a fan of Manga-Anime, you can't help but come to the shop, you can find yourself manga characters that since childhood have been attached to you through comic books like Doraemon cat, or Doraemon. Detective from the famous Conan to the naughty robot Arale with 2 Boco kids and also can't ignore the famous characters in OnePiece, Dragon Ball and many other characters in the story like Gintama, Naruto, or Anime are playing. very hot are Jujutsu Kaisen, Hololive, Date A Live..v… etc.
+And if you are a big fan of animated movies like Pixar, Disney: ToyStory, Incredible, etc. or blockbuster Hollywood movies like Batman, Avenger, Ironman, Hulk, .. then you can't ignore it." />
+
+                            </Grid>
+
+                            <Grid>
+                                <!-- Category -->
+                                <Label
+								Text="OUR MISSION"
+								TextColor="#ff5e14"
+								FontSize="16"
+								VerticalOptions="Center" />
+
+                            </Grid>
+
+
+                            <!-- Text block 2 -->
+                            <Grid Margin="0,5,0,10">
+                                <Label
+                                     TextColor="#09052e"
+							Text="Each product of Wjpuki is carefully crafted with the hands of skilled craftsmen, selected by the shop to be imported very carefully. Carefully selected materials and hundreds of spoiled colors combine with modern thinking and sophisticated design to deliver high quality products to consumers. Each decorative accessory bearing the stamp of TEE Beauty Tool shop has won thousands of hearts of customers in Ho Chi Minh City in particular and all over the country in general.
+
+image Top 7 Most Popular Ho Chi Minh City Anime Models  Accessories Shop - No. 4
+During the past time, Wjpuki shop has continuously launched into the market a variety of quality and diverse anime/manga-inspired accessories with full criteria: durable - multi-colored - satisfying the choice. Choose from many different personalities. From the shimmering, divine transparent hologram pen boxes with youthful designs to the super luxurious Silicone Flamingo cosmetic bags... the styles range from simple to sophisticated textures. Bringing a break and confidence to the user, all suitable to wear to school or on your makeup table for a more fashionable look.
+
+Not only bringing a very high fashion look, but Wjpuki's genuine items are also a lovely gift for boys to give their girlfriends on the occasion of their birthday or love anniversary..!" />
+                            </Grid>
+
+
+
+                            <Grid
+							Margin="-20,0">
+                                <!--Gallery-->
+                                <Image
+								Source="logo.jfif"
+								HeightRequest="160"
+								>
+                                </Image>
+                            </Grid>
+
+                            <Grid>
+                                <!-- Category -->
+                                <Label
+								Text="OUR UNIQUE SERVICE OFFERING"
+								TextColor="#ff5e14"
+								FontSize="16"
+								VerticalOptions="Center" />
+
+                            </Grid>
+
+                            <Grid Margin="0,5,0,10">
+                                <Label
+                                    TextColor="#09052e"
+							Text="Receive free shipping within HO CHI MINH city (1km radius) (applicable to orders over 300,000).
+
+For orders on the website, the shop will call to confirm the order and report the shipping fee to the customer, the goods will be sent after the customer agrees with the shipping fee.
+
+Ship COD goods nationwide, express delivery with reasonable fees. " />
+                            </Grid>
+
+                            <Grid>
+                                <Label
+								Text="CONTACT US"
+								TextColor="#ff5e14"
+								FontSize="16"
+								VerticalOptions="Center" />
+
+                            </Grid>
+
+                            <Grid Margin="0,5,0,10">
+                                <Label
+                                    TextColor="#09052e"
+							Text="For further support you can call our helpline,visit us or email us using the options below" />
+                            </Grid>
+                            <Grid>
+                                <Label
+								Text="OUR ADDRESS"
+								TextColor="#ff5e14"
+								FontSize="16"
+								VerticalOptions="Center" />
+
+                            </Grid>
+
+                            <Grid Margin="0,5,0,10">
+                                <Label
+                                    TextColor="#09052e"
+							Text="KTX Khu B ĐHQG TPHCM." />
+                            </Grid>
+
+                            <Grid>
+                                <Label
+								Text="OUR EMAIL ADDRESS"
+								TextColor="#ff5e14"
+								FontSize="16"
+								VerticalOptions="Center" />
+
+                            </Grid>
+
+                            <Grid Margin="0,5,0,10">
+                                <Label
+                                    TextColor="#09052e"
+							Text="info@wjpuki.com.vn" />
+                            </Grid>
+                            <Frame HasShadow="True"
+                           Padding="5"
+                           Margin="0,10,0,10"
+                           CornerRadius="30">
+                                <Entry Text=""  Placeholder="Type info@swiftgas.co.za here!!!" x:Name="EntryEmail"/>
+                            </Frame>
+
+                            <Frame HasShadow="True"
+                           Padding="5"
+                           Margin="0,10,0,10"
+                           CornerRadius="30">
+                                <Entry  Text="" Placeholder="Subject" x:Name="EntrySubject"/>
+                            </Frame>
+                            <Button Text="Submit"
+                    Margin="10"
+                    BackgroundColor="#ff5e14"
+                    TextColor="White"
+                    FontSize="Medium"
+                    CornerRadius="30" 
+                    Clicked="Button_Clicked"/>
+
+                        </StackLayout>
+                    </Frame>
+
+                </Grid>
+
+
+            </StackLayout>
+
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

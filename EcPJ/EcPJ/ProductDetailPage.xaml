@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:PanCake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="EcPJ.ProductDetailPage"
+             >
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout x:Name = "productDetailInfo">
+                <Grid>
+                    <Image Aspect="Fill"
+                           HeightRequest="250" x:Name="imgPd"/>
+                    <Image Source="close"
+                           HeightRequest="40"
+                           WidthRequest="40"
+                           Margin="10,20,10,20"
+                           VerticalOptions="Start"
+                           HorizontalOptions="Start">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="TapBack" Tapped="TapBack_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
+
+
+                <StackLayout Grid.Row="1" Margin="-6"  BackgroundColor="#ff5e14">
+                    <PanCake:PancakeView Grid.Row="1" CornerRadius="-50,50,50,-50">
+                        <Grid RowDefinitions="Auto,Auto,Auto,Auto" Padding="20,15,20,0" BackgroundColor="White" HeightRequest="300">
+                            <Label Grid.Row="0" Text="Product Detail" FontAttributes="Bold" TextColor="#09052e"/>
+                            <Label Grid.Row="1" x:Name="titlePd" TextColor="#ff5e14" FontSize="30" FontAttributes="Bold"/>
+                            <StackLayout HorizontalOptions="EndAndExpand"
+                                     Orientation="Horizontal">
+                                <Label Text="Price"
+                                   TextColor="#09052e"
+                                   FontSize="Large" />
+                                <Label Grid.Row="1" x:Name="pricePd" FontSize="25" Padding="0,00" TextColor="#ff5e14" FontAttributes="Bold"/>
+                            </StackLayout>
+                            <Label Grid.Row="4" x:Name="desPd" TextColor="#09052e"/>
+                        </Grid>
+                    </PanCake:PancakeView>
+                </StackLayout>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Stepper Margin="0,0,0,40" VerticalOptions="CenterAndExpand" Grid.Column="0" Grid.Row="0"
+                             HorizontalOptions="CenterAndExpand"  Value="1" Increment="1" Minimum="1" Maximum="1000"
+                         ValueChanged="Stepper_ValueChanged" />
+                     <Label x:Name="_displayLabel"
+                            TextColor="#ff5e14"
+                            Text="1"
+                            VerticalOptions="StartAndExpand" Grid.Column="1" Grid.Row="0" FontSize="Large" />
+                </Grid>
+                <StackLayout Orientation="Horizontal">
+                    <StackLayout HorizontalOptions="FillAndExpand"
+                                 Margin="30,0,0,10">
+                        <Label Text="Total Price"
+                               TextColor="#ff5e14"
+                               FontSize="Medium" />
+
+                        <Label CharacterSpacing="1"
+                                           TextColor="#09052e"
+                                           FontSize="Medium"
+                                           x:Name="totalPriceText"/>
+
+                    </StackLayout>
+                    <Button x:Name="BtnAddToCart"
+                            Text="Add To Cart"
+                            HorizontalOptions="FillAndExpand"
+                            CornerRadius="40"
+                            BackgroundColor="#ff5e14"
+                            TextColor="White" 
+                            Clicked="BtnAddToCart_Clicked"/>
+
+                </StackLayout>
+                <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

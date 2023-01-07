@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EcPJ.OrdersPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid Margin="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="8*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Image Source="backarrow.png"
+                       Grid.Column="0"
+                       HorizontalOptions="Center">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="TapBack" Tapped="TapBack_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Grid.Column="1"
+                       TextColor="#ff5e14"
+                       Text="Order History"
+                       FontSize="Large"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Center" />
+            </Grid>
+            <ListView x:Name="orderList"
+                      HasUnevenRows="True"
+                      ItemSelected="orderList_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="20">
+                                <StackLayout Orientation="Horizontal">
+                                    <StackLayout>
+                                        <Label Text="Order No."
+                                               TextColor="Gray" />
+                                        <Label TextColor="#ff5e14" x:Name="orderNo"
+                                               Text="{Binding _id}"/>
+                                    </StackLayout>
+                                    <StackLayout HorizontalOptions="EndAndExpand">
+                                        <Label Text="Address"
+                                               TextColor="Gray" />
+                                        <Label TextColor="#ff5e14" x:Name="createAtLable"
+                                               Text="{Binding address.city}"/>
+                                    </StackLayout>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Status"
+                                           TextColor="#09052e" />
+                                    <Label  HorizontalOptions="EndAndExpand"
+                                            TextColor="#09052e"
+                                            Text="{Binding status,StringFormat='{0:F2}'}"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
