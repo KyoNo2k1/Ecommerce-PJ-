@@ -32,7 +32,6 @@ namespace EcPJ
             var tokenStr = "Bearer " + token;
             httpClient.DefaultRequestHeaders.Add("token", tokenStr);
             var productDetail = await httpClient.GetStringAsync(AppSetting.ApiUrl + "api/products/find/" + productId);
-            _ = DisplayAlert("tb", productDetail, "OK");
             var productListConverted = JsonConvert.DeserializeObject<Product>(productDetail);
             imgPd.Source = productListConverted.img;
             titlePd.Text = productListConverted.title;
