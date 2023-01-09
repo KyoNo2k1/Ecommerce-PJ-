@@ -32,12 +32,12 @@ namespace EcPJ
             orderList.ItemsSource = orderListConverted;
 
         }
-            private void orderList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-            {
-                var selectedItem = e.SelectedItem as Order;
-                var id = selectedItem._id;
-                Navigation.PushModalAsync(new OrderDetailPage(id));
-            }
+        private void orderList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var selectedItem = e.SelectedItem as Order;
+            var id = selectedItem._id;
+            Navigation.PushModalAsync(new OrderDetailPage(id));
+        }
 
         private void TapBack_Tapped(object sender, EventArgs e)
         {

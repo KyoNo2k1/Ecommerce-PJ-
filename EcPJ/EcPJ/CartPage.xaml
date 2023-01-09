@@ -19,13 +19,13 @@
                 </Image>
                 <Label Grid.Column="1"
                        Margin="20,-10,20,-10"
-                       TextColor="#ff5e14"
+                       TextColor="#2596be"
                        Text="Shopping Cart"
                        FontSize="Large"
                        FontAttributes="Bold"
                        HorizontalTextAlignment="Center" />
                 <Label Grid.Column="2"
-                       TextColor="#ff5e14"
+                       TextColor="#2596be"
                        Text="Clear"
                        FontSize="15"
                        CharacterSpacing="1"
@@ -33,7 +33,7 @@
                        VerticalTextAlignment="End"
                        HorizontalTextAlignment="Center">
                     <Label.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding ClearCartCommand}"/>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
                     </Label.GestureRecognizers>
                 </Label>
             </Grid>
@@ -57,7 +57,7 @@
                                         </Grid.RowDefinitions>
                                         <Image Source="{Binding img}" Grid.Column="0" Grid.Row="0" HeightRequest="100" WidthRequest="100"/>
                                         <StackLayout Grid.Column="1" Grid.Row="0">
-                                            <Label TextColor="#ff5e14"
+                                            <Label TextColor="#2596be"
                                        FontSize="Medium"
                                        Text="{Binding title}"/>
                                             <StackLayout Orientation="Horizontal">
@@ -86,7 +86,7 @@
                                                     HorizontalOptions="CenterAndExpand"  Value="1" Increment="1" Minimum="1" Maximum="1000"
                                                     ValueChanged="Stepper_ValueChanged" />
                                            <Label ClassId="{Binding _id}"
-                                           TextColor="#ff5e14"
+                                           TextColor="#2596be"
                                            Text="Remove"
                                            FontSize="15"
                                            CharacterSpacing="1"
@@ -112,15 +112,14 @@
                 <StackLayout HorizontalOptions="FillAndExpand"
                              Margin="30,0,0,10">
                     <Label Text="Total Price"
-                           TextColor="#ff5e14"
+                           TextColor="#2596be"
                            FontSize="Medium" />
                     <Label CharacterSpacing="1" x:Name="LblTotalPrice"
                                            TextColor="#09052e"
-                                           FontSize="Medium"
-                                           Text="{Binding price,Mode=TwoWay, StringFormat='Total {0:F2}'}"/>
+                                           FontSize="Medium"/>
                 </StackLayout>
                 <Button HorizontalOptions="FillAndExpand"
-                        BackgroundColor="#ff5e14"
+                        BackgroundColor="#2596be"
                         CornerRadius="40"
                         TextColor="White"
                         Text="Proceed" Clicked="Button_Clicked"/>

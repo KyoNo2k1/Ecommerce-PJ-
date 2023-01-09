@@ -18,50 +18,47 @@
                     <DataTemplate>
                         <StackLayout>
                             <Label Margin="15,150,15,0"
-                               Text="Product Categories"
+                               Text="WJPUKI SHOP"
                                TextColor="#09052e"
                                FontSize="Large"
                                HorizontalTextAlignment="Center"/>
-                            <Label Margin="15,0,15,0"
+                            <!--<Label Margin="15,0,15,0"
                                Text="Scroll horizontally to see more categories."
                                TextColor="#09052e"
                                FontSize="Caption"
                                HorizontalTextAlignment="Center"/>
-                            <CollectionView
-                                         x:Name="cateList"
-                                         HeightRequest="130"
-                                         SelectionMode="Single"
-                                         SelectionChanged="CollectionView_SelectionChanged">
+                            <CollectionView  x:Name="LstCate"
+                                             HeightRequest="130"
+                                             SelectionMode="Single"
+                                             SelectionChanged="LstCate_SelectionChanged">
                                 <CollectionView.ItemsLayout>
                                     <LinearItemsLayout Orientation="Horizontal" />
                                 </CollectionView.ItemsLayout>
                                 <CollectionView.ItemTemplate>
                                     <DataTemplate>
                                         <StackLayout Orientation="Horizontal">
-                                            
-                                            
                                             <Frame Padding="0"
-                                               BackgroundColor="Transparent"
-                                               Margin="10,0,10,0"
-                                               HasShadow="True">
+                                                   BackgroundColor="Transparent"
+                                                   Margin="10,0,10,0"
+                                                   HasShadow="True">
                                                 <StackLayout Orientation="Vertical">
                                                     <Frame Padding="0"
-                                                       CornerRadius="30"
-                                                       IsClippedToBounds="True"
-                                                       BackgroundColor="red"
-                                                       HeightRequest="40"
-                                                       WidthRequest="160"
-                                                       Margin="5,10,1,10"
-                                                       HorizontalOptions="FillAndExpand">
+                                                           CornerRadius="30"
+                                                           IsClippedToBounds="True"
+                                                           BackgroundColor="red"
+                                                           HeightRequest="40"
+                                                           WidthRequest="160"
+                                                           Margin="5,10,1,10"
+                                                           HorizontalOptions="FillAndExpand">
 
                                                         <Label TextColor="white"
-                                                       HorizontalTextAlignment="Center"
-                                                             VerticalTextAlignment="Center"
-                                                       HorizontalOptions="FillAndExpand"
-                                                       
-                                                       FontSize="Medium"
-                                                       TextDecorations="None"
-                                                       Text="á"/>
+                                                           HorizontalTextAlignment="Center"
+                                                                 VerticalTextAlignment="Center"
+                                                           HorizontalOptions="FillAndExpand"
+                                                            
+                                                           FontSize="Medium"
+                                                           TextDecorations="None"
+                                                           Text="{Binding cateName}"/>
                                                     </Frame>
 
 
@@ -70,9 +67,9 @@
                                         </StackLayout>
                                     </DataTemplate>
                                 </CollectionView.ItemTemplate>
-                            </CollectionView>
-                            <Label Margin="15,-65,15,0"
-                               Text="Popular Products"
+                            </CollectionView>-->
+                            <Label Margin="15,0,15,0"
+                               Text="All Products"
                                TextColor="#09052e"
                                FontSize="Large"
                                HorizontalTextAlignment="Center"/>
@@ -111,7 +108,7 @@
                                             </Frame>
                                             <StackLayout Orientation="Horizontal">
                                                 <StackLayout HorizontalOptions="CenterAndExpand">
-                                                    <Label TextColor="#ff5e14"
+                                                    <Label TextColor="#2596be"
                                            FontSize="Body"
                                        HorizontalTextAlignment="Center"
                                        Text="{Binding title}"/>
@@ -123,7 +120,7 @@
                                             Text="Add To Cart" ClassId="{Binding _id}"
                                             HorizontalOptions="Fill"
                                             CornerRadius="30"
-                                            BackgroundColor="#ff5e14"
+                                            BackgroundColor="#2596be"
                                             TextColor="White" Clicked="Button_Clicked"/>
 
                                                 </StackLayout>
@@ -201,8 +198,8 @@
                                Grid.Row="0"
                                Grid.Column="1"
                                Grid.RowSpan="2"
-                               BackgroundColor="#ff5e14">
-                            <Label Text="{Binding TotalItems}"
+                               BackgroundColor="#2596be">
+                            <Label x:Name="totalItems"
                                    VerticalTextAlignment="Center"
                                    HorizontalTextAlignment="Center"
                                    HeightRequest="25"
@@ -233,7 +230,7 @@
                 </Grid.ColumnDefinitions>
                 <StackLayout BackgroundColor="White"
                              x:Name="SlMenu">
-                    <Grid BackgroundColor="#ff5e14"
+                    <Grid BackgroundColor="#2596be"
                           HeightRequest="120">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="4*" />
@@ -250,7 +247,7 @@
                             <Label Text="Welcome"
                                    FontSize="Large"
                                    TextColor="White" />
-                            <Label Text="{Binding UserName}"
+                            <Label x:Name="userNameTxt"
                                    FontSize="Small"
                                    TextColor="White" />
                         </StackLayout>
@@ -262,7 +259,7 @@
                                HeightRequest="30"
                                WidthRequest="30" />
                         <Label Text="My Orders"
-                               TextColor="#ff5e14"
+                               TextColor="#2596be"
                                HeightRequest="50"
                                VerticalTextAlignment="Center"
                                FontSize="20" />
@@ -277,7 +274,7 @@
                                HeightRequest="30"
                                WidthRequest="30" />
                         <Label Text="Cart"
-                               TextColor="red"
+                               TextColor="#2596be"
                                HeightRequest="50"
                                VerticalTextAlignment="Center"
                                FontSize="20" />
@@ -292,7 +289,7 @@
                                HeightRequest="30"
                                WidthRequest="30" />
                         <Label Text="Contact"
-                               TextColor="#ff5e14"
+                               TextColor="#2596be"
                                HeightRequest="50"
                                VerticalTextAlignment="Center"
                                FontSize="20" />
@@ -307,7 +304,7 @@
                                HeightRequest="30"
                                WidthRequest="30" />
                         <Label Text="Logout"
-                               TextColor="#ff5e14"
+                               TextColor="#2596be"
                                HeightRequest="50"
                                VerticalTextAlignment="Center"
                                FontSize="20" />

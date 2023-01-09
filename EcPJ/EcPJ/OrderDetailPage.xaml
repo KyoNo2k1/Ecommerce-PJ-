@@ -18,7 +18,7 @@
                     </Image.GestureRecognizers>
                 </Image>
                 <Label Grid.Column="1"
-                       TextColor="#ff5e14"
+                       TextColor="#2596be"
                        Text="Order Details"
                        FontSize="Large"
                        FontAttributes="Bold"
@@ -44,7 +44,7 @@
                                     <Image Grid.Column="0" Source="{Binding img}" VerticalOptions="StartAndExpand" HeightRequest="150"/>
                                     <StackLayout Grid.Column="1">
                                         <Label Text="Qty"
-                                               TextColor="#ff5e14"
+                                               TextColor="#2596be"
                                                HorizontalOptions="Center" />
                                         <Label TextColor="#09052e"
                                                HorizontalOptions="Center"
@@ -53,7 +53,7 @@
                                     </StackLayout>
                                     <StackLayout Grid.Column="2">
                                         <Label Text="Unit Price"
-                                               TextColor="#ff5e14"
+                                               TextColor="#2596be"
                                                HorizontalOptions="Center" />
                                         <Label TextColor="#09052e"
                                                HorizontalOptions="Center"
@@ -61,7 +61,7 @@
                                     </StackLayout>
                                     <StackLayout Grid.Column="3">
                                         <Label Text="Sub Total"
-                                               TextColor="#ff5e14"
+                                               TextColor="#2596be"
                                                HorizontalOptions="Center" />
                                         <Label TextColor="#09052e"
                                                HorizontalOptions="Center"
@@ -78,11 +78,12 @@
                         <Label HorizontalOptions="End"
                                Text="Total Price"
                                FontSize="Medium"
-                               TextColor="#ff5e14" />
+                               TextColor="#2596be" />
                         <Label HorizontalOptions="End"
                                x:Name="totalPrice"
                                FontSize="Medium"
                                TextColor="#09052e" />
+                        <Button HorizontalOptions="Start" Text="Delete Orders" WidthRequest="150" HeightRequest="50" BackgroundColor="Red" TextColor="White" CornerRadius="20" Clicked="Button_Clicked"/>
                     </StackLayout>
                 </ListView.Footer>
             </ListView>

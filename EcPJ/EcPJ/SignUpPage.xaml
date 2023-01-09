@@ -11,7 +11,7 @@
                                FontAttributes="Bold"
                                FontSize="Title"
                                HorizontalOptions="Center"
-                               TextColor="#ff5e14"/>
+                               TextColor="#2596be"/>
                         <Frame HasShadow="True"
                            Padding="5"
                            Margin="0,10,0,10"
@@ -69,12 +69,12 @@
                 <Button Text="CONTINUE"
                         TextColor="White"
                         CornerRadius="30"
-                        BackgroundColor="#ff5e14" Clicked="Button_Clicked"/>
+                        BackgroundColor="#2596be" Clicked="Button_Clicked"/>
                 <Label Text="Already have an account?"
                        HorizontalTextAlignment="Center"
                        TextColor="#09052e" />
                 <Button Text="Login"
-                        BackgroundColor="#ff5e14"
+                        BackgroundColor="#2596be"
                         TextColor="White"
                         CornerRadius="30" Clicked="Button_Clicked_1"/>
 

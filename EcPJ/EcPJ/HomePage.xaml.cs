@@ -24,10 +24,29 @@ namespace EcPJ
         async void ListViewInit()
         {
             HttpClient httpClient = new HttpClient();
+            var userId = Preferences.Get("userId", null);
+            var userName = Preferences.Get("userName", null);
+            var token = Preferences.Get("accessToken", null);
+            var tokenStr = "Bearer " + token;
+            httpClient.DefaultRequestHeaders.Add("token", tokenStr);
             var productList = await httpClient.GetStringAsync(AppSetting.ApiUrl + "api/products");
             var productListConverted = JsonConvert.DeserializeObject<List<Product>>(productList);
             LstProduct.ItemsSource = productListConverted;
 
+            try
+            {
+                var cartList = await httpClient.GetStringAsync(AppSetting.ApiUrl + "api/carts/find/" + userId);
+                CartItem cartListConverted = JsonConvert.DeserializeObject<CartItem>(cartList);
+                var total = cartListConverted.products.Length;
+                totalItems.Text = total.ToString();
+            }
+            catch
+            {
+                totalItems.Text = "0";
+            }
+            var cateList = await httpClient.GetStringAsync(AppSetting.ApiUrl + "api/categories");
+            var cateListConverted = JsonConvert.DeserializeObject<List<Category>>(cateList);
+            userNameTxt.Text = userName.ToString();
         }
 
         private void LstProduct_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -53,17 +72,17 @@ namespace EcPJ
                 var tokenStr = "Bearer " + token;
                 var httpClient = new HttpClient();
                 httpClient.DefaultRequestHeaders.Add("token", tokenStr);
+
                 var cartList = await httpClient.GetStringAsync(AppSetting.ApiUrl + "api/carts/find/" + userId);
-                CartItem cartListConverted = JsonConvert.DeserializeObject<CartItem>(cartList);
-                ProductCart[] products = new ProductCart[] {
-                    new ProductCart {productId = id, _id = cartListConverted._id },
-                };
-
-
-                if (cartListConverted._id != null)
+                try
                 {
+                    CartItem cartListConverted = JsonConvert.DeserializeObject<CartItem>(cartList);
+
+                    ProductCart[] products0 = new ProductCart[] {
+                        new ProductCart {productId = id, _id = cartListConverted._id, quantity = 1 },
+                    };
                     var productClone = cartListConverted.products;
-                    var newPd = products.Concat(productClone).ToArray();
+                    var newPd = products0.Concat(productClone).ToArray();
 
                     var cartItemConcat = new CartItem()
                     {
@@ -80,33 +99,36 @@ namespace EcPJ
                     {
                         _ = DisplayAlert("Thong bao", "add thanh cong vao gio hang", "OK");
                     }
+
                 }
-                else
+                catch
                 {
+                    ProductCart[] products = new ProductCart[] {
+                        new ProductCart {productId = id, quantity = 0 },
+                    };
                     var cartItem = new CartItem()
                     {
-                        _id = cartListConverted._id,
                         userId = userId,
                         products = products,
                     };
                     var json = JsonConvert.SerializeObject(cartItem);
                     var content = new StringContent(json, Encoding.UTF8, "application/json");
-                    var response = await httpClient.PostAsync(AppSetting.ApiUrl + "api/carts", content);
-                    var jsonResult = await response.Content.ReadAsStringAsync();
+                    var response1 = await httpClient.PostAsync(AppSetting.ApiUrl + "api/carts", content);
+                    var jsonResult = await response1.Content.ReadAsStringAsync();
                     var result = JsonConvert.DeserializeObject<CartItem>(jsonResult);
                     if (result != null)
                     {
                         _ = DisplayAlert("Thong bao", "add thanh cong", "OK");
                     }
                 }
-
-
+                ListViewInit();
             }
             catch (Exception ex)
             {
-                _ = DisplayAlert("Thong bao", ex.Message, "OK");
+                _ = DisplayAlert("Thong bao loi", ex.Message, "OK");
 
             }
+            ListViewInit();
         }
 
         private async void ImgMenu_Tapped(object sender, EventArgs e)
@@ -153,5 +175,9 @@ namespace EcPJ
             CloseHamBurgerMenu();
         }
 
+        private void LstCate_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

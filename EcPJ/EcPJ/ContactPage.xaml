@@ -19,7 +19,7 @@
                         </Image.GestureRecognizers>
                     </Image>
                     <Label Grid.Column="1"
-                       TextColor="#ff5e14"
+                       TextColor="#2596be"
                        Text="About Us"
                        FontSize="Large"
                        FontAttributes="Bold"
@@ -89,7 +89,7 @@
                                 <!-- Category -->
                                 <Label
 								Text="ABOUT US"
-								TextColor="#ff5e14"
+								TextColor="#2596be"
 								FontSize="16"
 								VerticalOptions="Center" />
 
@@ -108,7 +108,7 @@ And if you are a big fan of animated movies like Pixar, Disney: ToyStory, Incred
                                 <!-- Category -->
                                 <Label
 								Text="OUR MISSION"
-								TextColor="#ff5e14"
+								TextColor="#2596be"
 								FontSize="16"
 								VerticalOptions="Center" />
 
@@ -143,7 +143,7 @@ Not only bringing a very high fashion look, but Wjpuki's genuine items are also 
                                 <!-- Category -->
                                 <Label
 								Text="OUR UNIQUE SERVICE OFFERING"
-								TextColor="#ff5e14"
+								TextColor="#2596be"
 								FontSize="16"
 								VerticalOptions="Center" />
 
@@ -162,7 +162,7 @@ Ship COD goods nationwide, express delivery with reasonable fees. " />
                             <Grid>
                                 <Label
 								Text="CONTACT US"
-								TextColor="#ff5e14"
+								TextColor="#2596be"
 								FontSize="16"
 								VerticalOptions="Center" />
 
@@ -176,7 +176,7 @@ Ship COD goods nationwide, express delivery with reasonable fees. " />
                             <Grid>
                                 <Label
 								Text="OUR ADDRESS"
-								TextColor="#ff5e14"
+								TextColor="#2596be"
 								FontSize="16"
 								VerticalOptions="Center" />
 
@@ -191,7 +191,7 @@ Ship COD goods nationwide, express delivery with reasonable fees. " />
                             <Grid>
                                 <Label
 								Text="OUR EMAIL ADDRESS"
-								TextColor="#ff5e14"
+								TextColor="#2596be"
 								FontSize="16"
 								VerticalOptions="Center" />
 
@@ -217,7 +217,7 @@ Ship COD goods nationwide, express delivery with reasonable fees. " />
                             </Frame>
                             <Button Text="Submit"
                     Margin="10"
-                    BackgroundColor="#ff5e14"
+                    BackgroundColor="#2596be"
                     TextColor="White"
                     FontSize="Medium"
                     CornerRadius="30" 

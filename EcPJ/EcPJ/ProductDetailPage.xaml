@@ -22,17 +22,17 @@
                 </Grid>
 
 
-                <StackLayout Grid.Row="1" Margin="-6"  BackgroundColor="#ff5e14">
+                <StackLayout Grid.Row="1" Margin="-6"  BackgroundColor="#2596be">
                     <PanCake:PancakeView Grid.Row="1" CornerRadius="-50,50,50,-50">
                         <Grid RowDefinitions="Auto,Auto,Auto,Auto" Padding="20,15,20,0" BackgroundColor="White" HeightRequest="300">
                             <Label Grid.Row="0" Text="Product Detail" FontAttributes="Bold" TextColor="#09052e"/>
-                            <Label Grid.Row="1" x:Name="titlePd" TextColor="#ff5e14" FontSize="30" FontAttributes="Bold"/>
+                            <Label Grid.Row="1" x:Name="titlePd" TextColor="#2596be" FontSize="30" FontAttributes="Bold"/>
                             <StackLayout HorizontalOptions="EndAndExpand"
                                      Orientation="Horizontal">
                                 <Label Text="Price"
                                    TextColor="#09052e"
                                    FontSize="Large" />
-                                <Label Grid.Row="1" x:Name="pricePd" FontSize="25" Padding="0,00" TextColor="#ff5e14" FontAttributes="Bold"/>
+                                <Label Grid.Row="1" x:Name="pricePd" FontSize="25" Padding="0,00" TextColor="#2596be" FontAttributes="Bold"/>
                             </StackLayout>
                             <Label Grid.Row="4" x:Name="desPd" TextColor="#09052e"/>
                         </Grid>
@@ -52,7 +52,7 @@
                              HorizontalOptions="CenterAndExpand"  Value="1" Increment="1" Minimum="1" Maximum="1000"
                          ValueChanged="Stepper_ValueChanged" />
                      <Label x:Name="_displayLabel"
-                            TextColor="#ff5e14"
+                            TextColor="#2596be"
                             Text="1"
                             VerticalOptions="StartAndExpand" Grid.Column="1" Grid.Row="0" FontSize="Large" />
                 </Grid>
@@ -60,7 +60,7 @@
                     <StackLayout HorizontalOptions="FillAndExpand"
                                  Margin="30,0,0,10">
                         <Label Text="Total Price"
-                               TextColor="#ff5e14"
+                               TextColor="#2596be"
                                FontSize="Medium" />
 
                         <Label CharacterSpacing="1"
@@ -73,7 +73,7 @@
                             Text="Add To Cart"
                             HorizontalOptions="FillAndExpand"
                             CornerRadius="40"
-                            BackgroundColor="#ff5e14"
+                            BackgroundColor="#2596be"
                             TextColor="White" 
                             Clicked="BtnAddToCart_Clicked"/>
 

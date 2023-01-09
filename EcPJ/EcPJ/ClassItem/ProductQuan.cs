@@ -14,7 +14,7 @@ namespace EcPJ.ClassItem
         public string size { get; set; }
         public string color { get; set; }
         public int price { get; set; }
-        public int quantity { get; set; } = 0;
+        public int quantity { get; set; } = 1;
         public int total { get; set; } = 0;
     }
 }

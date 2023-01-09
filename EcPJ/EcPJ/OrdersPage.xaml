@@ -18,7 +18,7 @@
                     </Image.GestureRecognizers>
                 </Image>
                 <Label Grid.Column="1"
-                       TextColor="#ff5e14"
+                       TextColor="#2596be"
                        Text="Order History"
                        FontSize="Large"
                        FontAttributes="Bold"
@@ -35,13 +35,13 @@
                                     <StackLayout>
                                         <Label Text="Order No."
                                                TextColor="Gray" />
-                                        <Label TextColor="#ff5e14" x:Name="orderNo"
+                                        <Label TextColor="#2596be" x:Name="orderNo"
                                                Text="{Binding _id}"/>
                                     </StackLayout>
                                     <StackLayout HorizontalOptions="EndAndExpand">
                                         <Label Text="Address"
                                                TextColor="Gray" />
-                                        <Label TextColor="#ff5e14" x:Name="createAtLable"
+                                        <Label TextColor="#2596be" x:Name="createAtLable"
                                                Text="{Binding address.city}"/>
                                     </StackLayout>
                                 </StackLayout>
