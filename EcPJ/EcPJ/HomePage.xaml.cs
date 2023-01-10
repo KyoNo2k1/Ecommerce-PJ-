@@ -44,8 +44,8 @@ namespace EcPJ
             {
                 totalItems.Text = "0";
             }
-            var cateList = await httpClient.GetStringAsync(AppSetting.ApiUrl + "api/categories");
-            var cateListConverted = JsonConvert.DeserializeObject<List<Category>>(cateList);
+/*            var cateList = await httpClient.GetStringAsync(AppSetting.ApiUrl + "api/categories");
+            var cateListConverted = JsonConvert.DeserializeObject<List<Category>>(cateList);*/
             userNameTxt.Text = userName.ToString();
         }
 
